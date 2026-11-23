@@ -1,4 +1,4 @@
-// Half-day 2 deck. Run from slides/: node half-day-2.js
+// Half-day 2 deck. Run from slides/: node 2-code-exploration-data-development.js
 const { THEME, newDeck, contentSlide, darkSlide, cards, stats } = require("./theme");
 const { pres } = newDeck("Half-day 2: Understanding an existing codebase and producing Data code");
 const K = THEME.colors;
@@ -253,4 +253,4 @@ cards(pres, s, [
 // 29 Closing
 darkSlide(pres, "All our tests pass... are our figures right?", "Open question for HD3 (3:50)", "Open question for HD3: all our tests pass, but are our figures right? Close the session and point to HD3.");
 
-pres.writeFile({ fileName: "half-day-2.pptx" }).then(f => console.log("wrote", f));
+pres.writeFile({ fileName: "2-code-exploration-data-development.pptx" }).then(f => console.log("wrote", f));

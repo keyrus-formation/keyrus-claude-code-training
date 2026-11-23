@@ -13,10 +13,10 @@ Each half-day lasts **4 hours**. The start time is up to the organiser (for exam
 
 | Half-day | Themes | Content | Timed guide | Slides |
 | --- | --- | --- | --- | --- |
-| **1** | **1 – 2** | 1. Claude Code fundamentals<br>2. Prompting & context engineering | [Half-day 1](docs/01-half-day-1.md) | [half-day-1.pptx](slides/half-day-1.pptx) |
-| **2** | **3 – 4** | 3. Code exploration<br>4. AI-assisted Data development | [Half-day 2](docs/02-half-day-2.md) | [half-day-2.pptx](slides/half-day-2.pptx) |
-| **3** | **5 – 6** | 5. Testing, debugging & quality<br>6. Integrations (MCP, Skills, hooks) and automation | [Half-day 3](docs/03-half-day-3.md) | [half-day-3.pptx](slides/half-day-3.pptx) |
-| **4** | **7 – 8, then 9** | 7. Delivery (Git, CI/CD, reviews)<br>8. Security, governance, costs<br>9. **End-to-end case study** (closing) | [Half-day 4](docs/04-half-day-4.md) | [half-day-4.pptx](slides/half-day-4.pptx) |
+| **1** | **1 – 2** | 1. Claude Code fundamentals<br>2. Prompting & context engineering | [Half-day 1](docs/01-half-day-1.md) | [1-fundamentals-prompting-context.pptx](slides/1-fundamentals-prompting-context.pptx) |
+| **2** | **3 – 4** | 3. Code exploration<br>4. AI-assisted Data development | [Half-day 2](docs/02-half-day-2.md) | [2-code-exploration-data-development.pptx](slides/2-code-exploration-data-development.pptx) |
+| **3** | **5 – 6** | 5. Testing, debugging & quality<br>6. Integrations (MCP, Skills, hooks) and automation | [Half-day 3](docs/03-half-day-3.md) | [3-testing-quality-integrations.pptx](slides/3-testing-quality-integrations.pptx) |
+| **4** | **7 – 8, then 9** | 7. Delivery (Git, CI/CD, reviews)<br>8. Security, governance, costs<br>9. **End-to-end case study** (closing) | [Half-day 4](docs/04-half-day-4.md) | [4-delivery-security-costs-case-study.pptx](slides/4-delivery-security-costs-case-study.pptx) |
 
 ### What the trainer guide contains ([`docs/`](docs/README.md))
 

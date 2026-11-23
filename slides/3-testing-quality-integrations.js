@@ -1,4 +1,4 @@
-// Half-day 3 deck: Make it reliable and equip it. Run from slides/: node half-day-3.js
+// Half-day 3 deck: Make it reliable and equip it. Run from slides/: node 3-testing-quality-integrations.js
 const { THEME, newDeck, contentSlide, darkSlide, cards, stats } = require("./theme");
 const { pres } = newDeck("Half-day 3 - Make it reliable and equip it");
 const K = THEME.colors, SH = pres.ShapeType;
@@ -323,4 +323,4 @@ cards(pres, s, [
 darkSlide(pres, "Next: Half-day 4", "Before then: push your fixes branch to the session repository, without merging",
   "For HD4: everyone pushes their fixes branch to the session repository (without merging). Questions and discussion.");
 
-pres.writeFile({ fileName: "half-day-3.pptx" }).then((f) => console.log("wrote", f));
+pres.writeFile({ fileName: "3-testing-quality-integrations.pptx" }).then((f) => console.log("wrote", f));

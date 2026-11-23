@@ -1,4 +1,4 @@
-// Generator for the half-day 4 deck. Run from slides/: node half-day-4.js
+// Generator for the half-day 4 deck. Run from slides/: node 4-delivery-security-costs-case-study.js
 const { THEME, newDeck, contentSlide, darkSlide, cards, stats } = require("./theme");
 const { pres } = newDeck("Half-day 4: Industrialize, secure, deliver");
 const K = THEME.colors;
@@ -345,4 +345,4 @@ cards(pres, s, [
 darkSlide(pres, "Thank you", "Questions, feedback and your next mission: put Claude Code to work.",
   "Closing slide. Stay available for questions after the survey.");
 
-pres.writeFile({ fileName: "half-day-4.pptx" }).then(() => console.log("wrote half-day-4.pptx"));
+pres.writeFile({ fileName: "4-delivery-security-costs-case-study.pptx" }).then(() => console.log("wrote 4-delivery-security-costs-case-study.pptx"));

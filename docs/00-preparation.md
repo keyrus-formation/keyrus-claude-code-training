@@ -69,7 +69,7 @@ forbid prompts like "improve the whole repository".
 | --- | --- |
 | Running project | repository root (see README) |
 | Participant exercise sheets | `exercises/HD1…HD4` |
-| Slide decks | `slides/half-day-1.pptx … half-day-4.pptx` (regenerate with `node half-day-N.js` in `slides/`) |
+| Slide decks | `slides/*.pptx`, named after their topics (regenerate with `node <name>.js` in `slides/`) |
 | Solutions | `solutions/` (remove from the participants' copy) |
 | Snowflake script | `snowflake/setup_training_env.sql` |
 | Shared Claude Code configuration | `.claude/` (permissions, hooks, skills, subagent, rules) |

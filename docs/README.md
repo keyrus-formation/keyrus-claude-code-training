@@ -23,10 +23,10 @@ By the end of the training, each participant can:
 
 | Half-day | Themes | Running thread | File | Slides |
 | --- | --- | --- | --- | --- |
-| **1** — Getting started | 1. Fundamentals · 2. Prompting & context engineering | Installation, first contact with RetailCo, `/init`, writing the `CLAUDE.md`, Plan Mode | [01-half-day-1.md](01-half-day-1.md) | [half-day-1.pptx](../slides/half-day-1.pptx) |
-| **2** — Understand and produce | 3. Code exploration · 4. AI-assisted Data development | Repository mapping, migrating a Snowflake query to dbt, optimising a pandas script (90 s → 0.2 s) | [02-half-day-2.md](02-half-day-2.md) | [half-day-2.pptx](../slides/half-day-2.pptx) |
-| **3** — Make it reliable and equipped | 5. Testing, debugging & quality · 6. Integrations & automation | Hunt for the 4 hidden bugs (≈ €570k of revenue lost), quality tests, dbt MCP, Skills, hooks | [03-half-day-3.md](03-half-day-3.md) | [half-day-3.pptx](../slides/half-day-3.pptx) |
-| **4** — Industrialise | 7. Delivery · 8. Security, governance, costs · 9. End-to-end case study | PR (pull request) reviewed by a subagent and by CI, "at-risk customers" case study in pairs | [04-half-day-4.md](04-half-day-4.md) | [half-day-4.pptx](../slides/half-day-4.pptx) |
+| **1** — Getting started | 1. Fundamentals · 2. Prompting & context engineering | Installation, first contact with RetailCo, `/init`, writing the `CLAUDE.md`, Plan Mode | [01-half-day-1.md](01-half-day-1.md) | [1-fundamentals-prompting-context.pptx](../slides/1-fundamentals-prompting-context.pptx) |
+| **2** — Understand and produce | 3. Code exploration · 4. AI-assisted Data development | Repository mapping, migrating a Snowflake query to dbt, optimising a pandas script (90 s → 0.2 s) | [02-half-day-2.md](02-half-day-2.md) | [2-code-exploration-data-development.pptx](../slides/2-code-exploration-data-development.pptx) |
+| **3** — Make it reliable and equipped | 5. Testing, debugging & quality · 6. Integrations & automation | Hunt for the 4 hidden bugs (≈ €570k of revenue lost), quality tests, dbt MCP, Skills, hooks | [03-half-day-3.md](03-half-day-3.md) | [3-testing-quality-integrations.pptx](../slides/3-testing-quality-integrations.pptx) |
+| **4** — Industrialise | 7. Delivery · 8. Security, governance, costs · 9. End-to-end case study | PR (pull request) reviewed by a subagent and by CI, "at-risk customers" case study in pairs | [04-half-day-4.md](04-half-day-4.md) | [4-delivery-security-costs-case-study.pptx](../slides/4-delivery-security-costs-case-study.pptx) |
 
 Theme 9 (hands-on practice) is not concentrated in half-day 4: **each half-day devotes about 50% of its time to exercises** on RetailCo;
 half-day 4 ends with the end-to-end case study.

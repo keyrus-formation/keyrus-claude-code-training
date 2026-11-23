@@ -1,4 +1,4 @@
-// Half-day 1 deck: Getting started with Claude Code. Run: node half-day-1.js
+// Half-day 1 deck: Getting started with Claude Code. Run: node 1-fundamentals-prompting-context.js
 const { THEME, newDeck, contentSlide, darkSlide, cards, stats } = require("./theme");
 const { pres } = newDeck("Half-day 1 - Getting started with Claude Code");
 const K = THEME.colors, SH = pres.ShapeType;
@@ -361,4 +361,4 @@ task("EXERCISE", "Exercise 1.4: add --since in Plan Mode", "Ex 1.4", "15 min, in
 // 32 Closing
 darkSlide(pres, "See you in half-day 2", "Keep your CLAUDE.md. Optional homework: read sql/legacy/customer_ltv.sql without Claude and note what looks suspicious.", "Wrap-up (10 min). For half-day 2: keep your CLAUDE.md; those who wish read the legacy query sql/legacy/customer_ltv.sql (without Claude!) and note what looks suspicious.");
 
-pres.writeFile({ fileName: "half-day-1.pptx" }).then(f => console.log("wrote", f));
+pres.writeFile({ fileName: "1-fundamentals-prompting-context.pptx" }).then(f => console.log("wrote", f));
