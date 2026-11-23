@@ -1,7 +1,7 @@
 """Transformations : nettoyage et typage des données brutes.
 
 NOTE FORMATEUR : ce module contient des bugs volontaires (voir
-exercises/J3_testing_debugging.md). Ne pas corriger avant la session.
+exercises/HD3_testing_debugging_integrations.md). Ne pas corriger avant la session.
 """
 
 from __future__ import annotations

@@ -1,38 +1,38 @@
-# Évaluation
+# Assessment
 
-## Quiz de fin de formation (10 questions, 10 min)
+## End-of-training quiz (10 questions, 10 min)
 
-1. **Quelle est la principale différence entre un agent comme Claude Code et un assistant conversationnel ?**
-   a) Il utilise un meilleur modèle · b) **Il agit en boucle : collecte du contexte, actions avec des outils, vérification** · c) Il n'envoie pas de données au cloud · d) Il ne se trompe pas
-2. **Une règle doit s'appliquer à 100 % (« ne jamais modifier `data/raw/` »). Où la mettre ?**
-   a) `CLAUDE.md` · b) Un skill · c) **Une permission `deny` ou un hook `PreToolUse`** · d) Le prompt
-3. **Dans quel mode Claude explore-t-il et propose-t-il un plan sans modifier de fichier ?**
+1. **What is the main difference between an agent like Claude Code and a chat assistant?**
+   a) It uses a better model · b) **It acts in a loop: gather context, act with tools, verify** · c) It does not send data to the cloud · d) It never makes mistakes
+2. **A rule must apply 100% of the time ("never modify `data/raw/`"). Where do you put it?**
+   a) `CLAUDE.md` · b) A skill · c) **A `deny` permission or a `PreToolUse` hook** · d) The prompt
+3. **In which mode does Claude explore and propose a plan without modifying any file?**
    a) `acceptEdits` · b) **`plan`** · c) `dontAsk` · d) `bypassPermissions`
-4. **Vous passez d'une correction de bug à une tâche de documentation sans rapport. Le bon geste ?**
-   a) Continuer · b) **`/clear`** · c) Changer de modèle · d) Redémarrer l'ordinateur
-5. **Un modèle dbt joint les paiements aux commandes et le test `unique` sur `order_id` échoue. Cause la plus probable ?**
-   a) Un bug de dbt · b) **Un fan-out : plusieurs paiements par commande, à agréger avant la jointure** · c) Un `NULL` dans `order_id` · d) Un problème de droits
-6. **Claude propose de corriger un test en échec en modifiant l'assertion du test. Que faites-vous ?**
-   a) J'accepte si la CI passe · b) **Je refuse tant que je n'ai pas établi que le test était faux ; sinon on corrige le code** · c) Je supprime le test · d) J'ajoute un `try/except`
-7. **Que contient idéalement un `CLAUDE.md` de projet ?**
-   a) La description de chaque fichier · b) **Commandes de build/test, conventions, pièges métier, interdits** · c) Les identifiants de connexion · d) L'historique des sessions
-8. **Pour du code client, quel type de compte utiliser ?**
-   a) Mon compte Pro personnel · b) **Un compte commercial (Team/Enterprise, API ou cloud), sans entraînement sur les données par défaut** · c) N'importe lequel · d) Un compte gratuit
-9. **Quel levier réduit le plus la consommation sur une longue session ?**
-   a) Écrire en anglais · b) **Garder le contexte petit : `/clear`, `CLAUDE.md` court, skills à la demande, subagents pour les sorties verbeuses** · c) Désactiver les tests · d) Utiliser toujours Opus
-10. **Dans GitHub Actions, comment rendre une relecture automatique de PR sûre et maîtrisée ?**
-   a) `bypassPermissions` · b) **Liste blanche d'outils (`--allowedTools`), `--max-turns`, timeout, secret dans les secrets GitHub, revue humaine finale** · c) Clé API dans le workflow · d) Laisser Claude fusionner la PR
+4. **You move from a bug fix to an unrelated documentation task. The right move?**
+   a) Carry on · b) **`/clear`** · c) Change model · d) Restart the computer
+5. **A dbt model joins payments to orders and the `unique` test on `order_id` fails. Most likely cause?**
+   a) A dbt bug · b) **A fan-out: several payments per order, to be aggregated before the join** · c) A `NULL` in `order_id` · d) A permissions problem
+6. **Claude proposes to fix a failing test by changing the test's assertion. What do you do?**
+   a) Accept if CI passes · b) **Refuse until I have established that the test was wrong; otherwise fix the code** · c) Delete the test · d) Add a `try/except`
+7. **What should a project `CLAUDE.md` ideally contain?**
+   a) A description of every file · b) **Build/test commands, conventions, business pitfalls, prohibitions** · c) Login credentials · d) Session history
+8. **For client code, which type of account should you use?**
+   a) My personal Pro account · b) **A commercial account (Team/Enterprise, API or cloud), with no training on data by default** · c) Any of them · d) A free account
+9. **Which lever reduces consumption the most over a long session?**
+   a) Writing in English · b) **Keeping the context small: `/clear`, a short `CLAUDE.md`, skills on demand, subagents for verbose output** · c) Disabling tests · d) Always using Opus
+10. **In GitHub Actions, how do you make an automatic PR review safe and controlled?**
+   a) `bypassPermissions` · b) **Tool allowlist (`--allowedTools`), `--max-turns`, timeout, secret in GitHub secrets, final human review** · c) API key in the workflow · d) Let Claude merge the PR
 
-Réponses : 1b · 2c · 3b · 4b · 5b · 6b · 7b · 8b · 9b · 10b (mélanger l'ordre des réponses avant distribution).
+Answers: 1b · 2c · 3b · 4b · 5b · 6b · 7b · 8b · 9b · 10b (shuffle the order of the answers before handing out).
 
-## Grille d'évaluation du cas pratique (sur 20)
+## Case study grading grid (out of 20)
 
-| Critère | Points | Attendu |
+| Criterion | Points | Expected |
 | --- | --- | --- |
-| Cadrage | 3 | Hypothèses écrites (date de référence, statuts, fenêtre de 365 jours, grain), questions pertinentes au métier |
-| Plan | 2 | Plan Mode utilisé, plan validé avant implémentation, tests prévus |
-| Exactitude du modèle dbt | 4 | Seuil VIP, annulées exclues, dates futures ignorées, résultat reproductible (pas de `current_date`), pas de fan-out |
-| Tests | 3 | Clé `unique`/`not_null`, test de la règle métier, tests pytest de l'export |
-| Confidentialité | 3 | Email pseudonymisé après normalisation, aucune donnée personnelle en clair dans l'export ni dans la conversation |
-| Livraison | 3 | Commits propres, relecture indépendante, PR décrite (dont usage de Claude), CI verte |
-| Retour d'expérience | 2 | Coût relevé, amélioration concrète de `CLAUDE.md` ou d'un skill |
+| Scoping | 3 | Written assumptions (reference date, statuses, 365-day window, grain), business-relevant questions |
+| Plan | 2 | Plan Mode used, plan validated before implementation, tests planned |
+| dbt model correctness | 4 | VIP threshold, cancelled orders excluded, future dates ignored, reproducible result (no `current_date`), no fan-out |
+| Tests | 3 | `unique`/`not_null` key, business rule test, pytest tests for the export |
+| Privacy | 3 | Email pseudonymised after normalisation, no personal data in clear in the export or in the conversation |
+| Delivery | 3 | Clean commits, independent review, PR described (including use of Claude), CI green |
+| Lessons learned | 2 | Cost recorded, concrete improvement to `CLAUDE.md` or a skill |

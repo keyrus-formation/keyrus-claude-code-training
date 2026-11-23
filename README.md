@@ -1,84 +1,85 @@
-# Formation Claude Code pour les consultants Data — Keyrus
+# Claude Code Training for Data Consultants — Keyrus
 
-Formation de **4 après-midi** pour apprendre à utiliser Claude Code sur des projets Data (SQL, Python, dbt, Snowflake).
+A **4 half-day** training (a half-day is either a morning or an afternoon) on using Claude Code for Data projects (SQL, Python, dbt, Snowflake).
 
-| Vous êtes… | Commencez par |
+| You are… | Start with |
 | --- | --- |
-| **Formateur** | [`docs/README.md`](docs/README.md) : objectifs, déroulé, guide minuté de chaque après-midi, préparation, évaluation |
-| **Participant** | La section « Installation » ci-dessous, puis les énoncés dans [`exercises/`](exercises) |
+| **Trainer** | [`docs/README.md`](docs/README.md): objectives, schedule, timed guide for each half-day, preparation, assessment |
+| **Participant** | The "Installation" section below, then the exercise sheets in [`exercises/`](exercises) |
 
-## Découpage de la formation : 4 après-midi, 9 thèmes
+## Training breakdown: 4 half-days, 9 themes
 
-Chaque après-midi dure **4 h, de 13h30 à 17h30**.
+Each half-day lasts **4 hours**. The start time is up to the organiser (for example 09:00 or 13:30).
 
-| Après-midi | Thèmes | Contenu | Guide minuté |
-| --- | --- | --- | --- |
-| **Jour 1** | **1 – 2** | 1. Fondamentaux de Claude Code<br>2. Prompting & context engineering | [J1](docs/01-apres-midi-1.md) |
-| **Jour 2** | **3 – 4** | 3. Exploration de code<br>4. Développement Data assisté par IA | [J2](docs/02-apres-midi-2.md) |
-| **Jour 3** | **5 – 6** | 5. Testing, debugging & qualité<br>6. Intégrations (MCP, Skills, hooks) et automatisation | [J3](docs/03-apres-midi-3.md) |
-| **Jour 4** | **7 – 8, puis 9** | 7. Delivery (Git, CI/CD, revues)<br>8. Sécurité, gouvernance, coûts<br>9. **Cas pratique de bout en bout** (clôture) | [J4](docs/04-apres-midi-4.md) |
+| Half-day | Themes | Content | Timed guide | Slides |
+| --- | --- | --- | --- | --- |
+| **1** | **1 – 2** | 1. Claude Code fundamentals<br>2. Prompting & context engineering | [Half-day 1](docs/01-half-day-1.md) | [half-day-1.pptx](slides/half-day-1.pptx) |
+| **2** | **3 – 4** | 3. Code exploration<br>4. AI-assisted Data development | [Half-day 2](docs/02-half-day-2.md) | [half-day-2.pptx](slides/half-day-2.pptx) |
+| **3** | **5 – 6** | 5. Testing, debugging & quality<br>6. Integrations (MCP, Skills, hooks) and automation | [Half-day 3](docs/03-half-day-3.md) | [half-day-3.pptx](slides/half-day-3.pptx) |
+| **4** | **7 – 8, then 9** | 7. Delivery (Git, CI/CD, reviews)<br>8. Security, governance, costs<br>9. **End-to-end case study** (closing) | [Half-day 4](docs/04-half-day-4.md) | [half-day-4.pptx](slides/half-day-4.pptx) |
 
-### Ce que contient le guide du formateur ([`docs/`](docs/README.md))
+### What the trainer guide contains ([`docs/`](docs/README.md))
 
-- **Un plan minute par minute** pour chaque après-midi (13h30 – 17h30) : messages clés, scripts de démo, notes du formateur.
-- [Checklist de préparation](docs/00-preparation.md)
-- [Aide-mémoire](docs/annexes/aide-memoire.md) d'une page
-- Quiz de 10 questions et [grille de notation du cas pratique](docs/annexes/evaluation.md)
-- [FAQ formateur](docs/annexes/faq-formateur.md)
+- **A minute-by-minute plan** for each half-day (4 hours): key messages, demo scripts, trainer notes. Times are given as elapsed time from the start of the session.
+- [Preparation checklist](docs/00-preparation.md)
+- A one-page [cheat sheet](docs/annexes/cheat-sheet.md)
+- A 10-question quiz and the [case study grading grid](docs/annexes/evaluation.md)
+- [Trainer FAQ](docs/annexes/trainer-faq.md)
 
 ---
 
-## RetailCo — le projet fil rouge
+## RetailCo — the running project
 
-Petit projet data réaliste (Python + DuckDB/Snowflake + dbt) utilisé pendant les 4 après-midi.
-Il contient **volontairement** de la dette technique et des bugs : c'est le terrain de jeu des exercices.
+A small, realistic data project (Python + DuckDB/Snowflake + dbt) used throughout the 4 half-days.
+It **deliberately** contains technical debt and bugs: it is the playground for the exercises.
 
-## Installation (15 min, à faire avant la première session)
+## Installation (15 min, to do before the first session)
 
 ```bash
-# 1. Claude Code (macOS / Linux / WSL) — Windows : irm https://claude.ai/install.ps1 | iex
+# 1. Claude Code (macOS / Linux / WSL) — Windows: irm https://claude.ai/install.ps1 | iex
 curl -fsSL https://claude.ai/install.sh | bash
 claude --version
 
-# 2. Projet
-git clone <url-du-repo> retailco && cd retailco
+# 2. Project
+git clone <repo-url> retailco && cd retailco
 python -m venv .venv && source .venv/bin/activate
-pip install -e ".[dev]"            # + ".[snowflake]" si vous utilisez l'environnement Snowflake
+pip install -e ".[dev]"            # + ".[snowflake]" if you use the Snowflake environment
 cp .env.example .env
 
-# 3. Données + entrepôt local
+# 3. Data + local warehouse
 python scripts/generate_data.py
 python -m retail_pipeline.pipeline
 cd dbt_project && DBT_PROFILES_DIR=. dbt build ; cd ..
 ```
 
-Le `dbt build` doit se terminer avec **1 test en échec** (`unique_fct_orders_order_id`) : c'est normal,
-c'est l'objet d'un exercice. Outils utiles : `jq` (utilisé par les hooks), `uv` (serveur MCP dbt), `gh`.
+`dbt build` must finish with **1 failing test** (`unique_fct_orders_order_id`): this is expected,
+it is the subject of an exercise. Useful tools: `jq` (used by the hooks), `uv` (dbt MCP server), `gh`.
 
 ## Structure
 
-| Chemin | Contenu |
+| Path | Content |
 | --- | --- |
-| `data/raw/` | CSV sources générés (clients, commandes, lignes, paiements, produits) — protégés en écriture |
-| `src/retail_pipeline/` | Pipeline Python extract → transform → quality → load |
-| `src/retail_pipeline/legacy_report.py` | Rapport historique lent (exercice d'optimisation) |
-| `sql/legacy/` | Requête Snowflake historique à migrer en dbt |
-| `dbt_project/` | Modèles staging et marts, cibles DuckDB (`dev`) et Snowflake (`snowflake`) |
-| `tests/` | Tests pytest (verts… mais incomplets) |
-| `.claude/` | Permissions, hooks, skills, subagent et règles partagés de l'équipe |
-| `.mcp.json.example` | Serveurs MCP dbt et Snowflake (à copier en `.mcp.json`) |
-| `.github/workflows/` | CI (lint, tests, dbt) et intégration Claude Code GitHub Actions |
-| `exercises/` | Énoncés des exercices, par après-midi |
-| `solutions/` | Corrigés (à ne distribuer qu'en fin de session) |
-| `docs/` | Guide du formateur, aide-mémoire, quiz, FAQ |
-| `snowflake/` | Script de création de l'environnement Snowflake de formation |
+| `data/raw/` | Generated source CSVs (customers, orders, lines, payments, products) — write-protected |
+| `src/retail_pipeline/` | Python pipeline: extract → transform → quality → load |
+| `src/retail_pipeline/legacy_report.py` | Slow legacy report (optimisation exercise) |
+| `sql/legacy/` | Legacy Snowflake query to migrate to dbt |
+| `dbt_project/` | Staging and marts models, DuckDB (`dev`) and Snowflake (`snowflake`) targets |
+| `tests/` | pytest tests (green… but incomplete) |
+| `.claude/` | Team-shared permissions, hooks, skills, subagent and rules |
+| `.mcp.json.example` | dbt and Snowflake MCP servers (copy to `.mcp.json`) |
+| `.github/workflows/` | CI (lint, tests, dbt) and Claude Code GitHub Actions integration |
+| `exercises/` | Exercise sheets, per half-day |
+| `solutions/` | Solutions (hand out only at the end of the session) |
+| `docs/` | Trainer guide, cheat sheet, quiz, FAQ |
+| `slides/` | PowerPoint decks (one per half-day) and the scripts that generate them |
+| `snowflake/` | Script that creates the training Snowflake environment |
 
-## Commandes de référence
+## Reference commands
 
 ```bash
-pytest -q                                              # tests unitaires
+pytest -q                                              # unit tests
 ruff check src tests                                   # lint
-python -m retail_pipeline.pipeline                     # charge data/raw dans DuckDB
-cd dbt_project && DBT_PROFILES_DIR=. dbt build         # modèles + tests dbt (DuckDB)
-DBT_TARGET=snowflake dbt build                          # même chose sur Snowflake
+python -m retail_pipeline.pipeline                     # load data/raw into DuckDB
+cd dbt_project && DBT_PROFILES_DIR=. dbt build         # dbt models + tests (DuckDB)
+DBT_TARGET=snowflake dbt build                          # same on Snowflake
 ```
