@@ -7,12 +7,24 @@ Formation de **4 après-midi** pour apprendre à utiliser Claude Code sur des pr
 | **Formateur** | [`docs/README.md`](docs/README.md) : objectifs, déroulé, guide minuté de chaque après-midi, préparation, évaluation |
 | **Participant** | La section « Installation » ci-dessous, puis les énoncés dans [`exercises/`](exercises) |
 
-| Après-midi | Thèmes |
-| --- | --- |
-| [J1](docs/01-apres-midi-1.md) | Fondamentaux de Claude Code · Prompting & context engineering |
-| [J2](docs/02-apres-midi-2.md) | Exploration de code · Développement Data assisté par IA |
-| [J3](docs/03-apres-midi-3.md) | Testing, debugging & qualité · Intégrations (MCP, Skills, hooks) et automatisation |
-| [J4](docs/04-apres-midi-4.md) | Delivery (Git, CI/CD, revues) · Sécurité, gouvernance, coûts · Cas pratique de bout en bout |
+## Découpage de la formation : 4 après-midi, 9 thèmes
+
+Chaque après-midi dure **4 h, de 13h30 à 17h30**.
+
+| Après-midi | Thèmes | Contenu | Guide minuté |
+| --- | --- | --- | --- |
+| **Jour 1** | **1 – 2** | 1. Fondamentaux de Claude Code<br>2. Prompting & context engineering | [J1](docs/01-apres-midi-1.md) |
+| **Jour 2** | **3 – 4** | 3. Exploration de code<br>4. Développement Data assisté par IA | [J2](docs/02-apres-midi-2.md) |
+| **Jour 3** | **5 – 6** | 5. Testing, debugging & qualité<br>6. Intégrations (MCP, Skills, hooks) et automatisation | [J3](docs/03-apres-midi-3.md) |
+| **Jour 4** | **7 – 8, puis 9** | 7. Delivery (Git, CI/CD, revues)<br>8. Sécurité, gouvernance, coûts<br>9. **Cas pratique de bout en bout** (clôture) | [J4](docs/04-apres-midi-4.md) |
+
+### Ce que contient le guide du formateur ([`docs/`](docs/README.md))
+
+- **Un plan minute par minute** pour chaque après-midi (13h30 – 17h30) : messages clés, scripts de démo, notes du formateur.
+- [Checklist de préparation](docs/00-preparation.md)
+- [Aide-mémoire](docs/annexes/aide-memoire.md) d'une page
+- Quiz de 10 questions et [grille de notation du cas pratique](docs/annexes/evaluation.md)
+- [FAQ formateur](docs/annexes/faq-formateur.md)
 
 ---
 
