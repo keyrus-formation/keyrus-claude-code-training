@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: raw
+    description: Fichiers bruts chargés par `python -m retail_pipeline.pipeline`.
+    schema: raw
+    tables:
+      - name: customers
+      - name: orders
+        description: Commandes, avec plusieurs versions possibles par order_id (CDC).
+      - name: order_lines
+      - name: payments
+        description: Une commande peut avoir 0, 1 ou 2 paiements (paiement fractionné).
+      - name: products

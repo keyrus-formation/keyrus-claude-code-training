@@ -1,0 +1,31 @@
+[project]
+name = "retail-pipeline"
+version = "0.3.0"
+description = "Projet fil rouge de la formation Claude Code — Keyrus"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas>=2.1",
+    "duckdb>=1.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6", "dbt-duckdb>=1.8"]
+snowflake = ["snowflake-connector-python[pandas]>=3.10", "dbt-snowflake>=1.8"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+exclude = ["src/retail_pipeline/legacy_report.py"]

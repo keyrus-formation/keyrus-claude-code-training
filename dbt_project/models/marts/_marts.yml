@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: fct_orders
+    description: Une ligne par commande, avec le montant payé.
+    columns:
+      - name: order_id
+        description: Clé primaire (grain).
+        data_tests: [unique, not_null]

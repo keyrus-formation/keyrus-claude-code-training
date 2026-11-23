@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: mart_customers_at_risk
+    description: >
+      Clients à risque de départ. Grain : une ligne par client. Date de référence : var('as_of_date').
+      À risque = inactif depuis plus de 90 jours (60 pour les VIP) avec au moins 2 commandes
+      non annulées sur les 365 jours précédents.
+    columns:
+      - name: customer_id
+        data_tests: [unique, not_null]
+      - name: is_at_risk
+        data_tests: [not_null]
+      - name: days_since_last_order
+        description: Jours entre la dernière commande non annulée et as_of_date (null si aucune commande).
+      - name: inactivity_threshold_days
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [60, 90]

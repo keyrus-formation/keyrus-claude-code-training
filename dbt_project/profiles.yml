@@ -1,0 +1,19 @@
+# Deux cibles : DuckDB (local, par défaut) et Snowflake (environnement de formation).
+# Aucun secret ici : tout passe par des variables d'environnement.
+retailco:
+  target: "{{ env_var('DBT_TARGET', 'dev') }}"
+  outputs:
+    dev:
+      type: duckdb
+      path: "{{ env_var('DUCKDB_PATH', '../data/retail.duckdb') }}"
+      threads: 4
+    snowflake:
+      type: snowflake
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
+      password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
+      role: "{{ env_var('SNOWFLAKE_ROLE', 'TRAINING_ROLE') }}"
+      warehouse: "{{ env_var('SNOWFLAKE_WAREHOUSE', 'TRAINING_WH') }}"
+      database: "{{ env_var('SNOWFLAKE_DATABASE', 'RETAILCO') }}"
+      schema: "{{ env_var('SNOWFLAKE_SCHEMA', 'DEV_' ~ env_var('USER', 'TRAINEE') | upper) }}"
+      threads: 4

@@ -1,0 +1,13 @@
+product_id,product_name,category,unit_price_eur
+P001,Café grains 1kg,Épicerie,18.90
+P002,Thé vert bio,Épicerie,7.50
+P003,Chocolat noir,Épicerie,3.20
+P004,Bougie parfumée,Maison,24.00
+P005,Plaid laine,Maison,59.90
+P006,Vase céramique,Maison,34.50
+P007,Casque audio,High-Tech,129.00
+P008,Chargeur USB-C,High-Tech,19.99
+P009,Enceinte BT,High-Tech,79.00
+P010,Tapis de yoga,Sport,29.90
+P011,Gourde inox,Sport,22.00
+P012,Haltères 2x5kg,Sport,45.00

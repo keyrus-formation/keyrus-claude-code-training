@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "dbt": {
+      "command": "uvx",
+      "args": ["dbt-mcp"],
+      "env": {
+        "DBT_PROJECT_DIR": "${PWD}/dbt_project",
+        "DBT_PATH": "${DBT_PATH:-dbt}",
+        "DBT_PROFILES_DIR": "${PWD}/dbt_project"
+      }
+    },
+    "snowflake": {
+      "type": "http",
+      "url": "https://${SNOWFLAKE_ACCOUNT_URL}/api/v2/databases/RETAILCO/schemas/MCP/mcp-servers/TRAINING_MCP",
+      "headers": {
+        "Authorization": "Bearer ${SNOWFLAKE_PAT}"
+      }
+    }
+  }
+}

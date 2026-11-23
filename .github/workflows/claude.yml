@@ -1,0 +1,56 @@
+# Claude répond aux mentions @claude dans les issues et les PR, et relit chaque PR.
+# Prérequis : application GitHub Claude installée + secret ANTHROPIC_API_KEY
+# (ou CLAUDE_CODE_OAUTH_TOKEN via `claude setup-token`). Raccourci : /install-github-app
+name: Claude Code
+on:
+  issue_comment:
+    types: [created]
+  pull_request_review_comment:
+    types: [created]
+  pull_request:
+    types: [opened, synchronize, ready_for_review]
+
+jobs:
+  mention:
+    if: github.event_name != 'pull_request' && contains(github.event.comment.body, '@claude')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      id-token: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          claude_args: "--max-turns 15"
+
+  review:
+    if: github.event_name == 'pull_request' && !github.event.pull_request.draft
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            Relis la PR ${{ github.repository }}#${{ github.event.pull_request.number }}
+            en suivant les conventions de CLAUDE.md et la checklist de .claude/skills/sql-review/SKILL.md.
+            Concentre-toi sur : fan-out des jointures, grain des modèles dbt, tests manquants,
+            données client exposées. Poste un commentaire de synthèse en français.
+          claude_args: |
+            --max-turns 10
+            --allowedTools "Read,Grep,Glob,Bash(git diff *),Bash(gh pr comment *),Bash(gh pr diff *)"

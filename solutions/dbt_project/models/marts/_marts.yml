@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: fct_orders
+    description: "Faits commandes. Grain : une ligne par commande. Paiements agrégés par commande."
+    columns:
+      - name: order_id
+        description: Clé primaire (grain).
+        data_tests: [unique, not_null]
+      - name: customer_id
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('stg_customers')
+                field: customer_id
+      - name: nb_payments
+        description: Nombre de paiements (0, 1 ou 2 pour un paiement fractionné).
+
+  - name: dim_customers
+    description: "Clients avec valeur vie client. Grain : une ligne par client."
+    columns:
+      - name: customer_id
+        data_tests: [unique, not_null]
+      - name: segment
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["B2C", "B2B", "VIP"]
