@@ -30,7 +30,7 @@
 > 1. Install Claude Code: `curl -fsSL https://claude.ai/install.sh | bash` (macOS/Linux/WSL)
 >    or `irm https://claude.ai/install.ps1 | iex` (Windows PowerShell), then check with `claude --version`.
 > 2. Check Python 3.10+ and Git, and install `jq` and `uv`.
-> 3. Clone the repository [URL] and follow the README "Installation" section up to `dbt build`.
+> 3. Clone the repository https://github.com/keyrus-formation/keyrus-claude-code-training and follow the README "Installation" section up to `dbt build`.
 > 4. Run `claude` in the folder and sign in with [Keyrus account / provided key].
 > If you get stuck, write to me: we sort out installation problems before the day, not during it.
 

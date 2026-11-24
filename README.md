@@ -41,7 +41,7 @@ curl -fsSL https://claude.ai/install.sh | bash
 claude --version
 
 # 2. Project
-git clone <repo-url> retailco && cd retailco
+git clone https://github.com/keyrus-formation/keyrus-claude-code-training && cd keyrus-claude-code-training
 python -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"            # + ".[snowflake]" if you use the Snowflake environment
 cp .env.example .env

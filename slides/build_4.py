@@ -77,7 +77,7 @@ add_flow(s, [("Branch", "git checkout -b fix/..."), ("Commit", "Atomic, team for
          icons=["layers", "check-circle", "file-text", "shield-check", "rocket"], family="blue")
 
 s = slide("blue", "Four team rules, already in settings.json", "Safe defaults for every mission",
-          "Rules already in place in .claude/settings.json: git status/diff/log allowed without confirmation; git commit and git push set to ask. Commit message format is written in CLAUDE.md with one line of 'why'. Parallel work: git worktree add ../retailco-feature-x -b feature-x, one Claude Code session per worktree.")
+          "Rules already in place in .claude/settings.json: git status/diff/log allowed without confirmation; git commit and git push set to ask. Commit message format is written in CLAUDE.md with one line of 'why'. Parallel work: git worktree add ../keyrus-claude-code-training-feature-x -b feature-x, one Claude Code session per worktree.")
 add_cards(s, [("Safe by default", "status, diff, log allowed; commit and push ask"),
               ("One branch per task", "Never commit directly to main"),
               ("Team commit format", "In CLAUDE.md, with one line of why"),

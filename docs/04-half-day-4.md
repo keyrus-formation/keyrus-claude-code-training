@@ -30,7 +30,7 @@ Recommended team rules (already in place in `.claude/settings.json`):
 - commit messages in the team format (written in `CLAUDE.md`), with one line of "why" context;
 - **small PRs**: one PR = one intent, reviewable in 10 minutes.
 
-To work in parallel without stepping on each other: **Git worktrees** (`git worktree add ../retailco-feature-x -b feature-x`), one Claude Code session per worktree.
+To work in parallel without stepping on each other: **Git worktrees** (`git worktree add ../keyrus-claude-code-training-feature-x -b feature-x`), one Claude Code session per worktree.
 
 ### The three review levels
 

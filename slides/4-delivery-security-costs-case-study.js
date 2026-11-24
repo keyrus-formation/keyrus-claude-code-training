@@ -67,7 +67,7 @@ flow(s, [
 footerNote(s, "One session per task, one branch per task.");
 
 s = contentSlide(pres, "Four team rules, already in .claude/settings.json",
-  "Rules already in place in .claude/settings.json: git status/diff/log allowed without confirmation; git commit and git push set to ask. Commit message format is written in CLAUDE.md with one line of 'why'. Parallel work: git worktree add ../retailco-feature-x -b feature-x, one Claude Code session per worktree.");
+  "Rules already in place in .claude/settings.json: git status/diff/log allowed without confirmation; git commit and git push set to ask. Commit message format is written in CLAUDE.md with one line of 'why'. Parallel work: git worktree add ../keyrus-claude-code-training-feature-x -b feature-x, one Claude Code session per worktree.");
 cards(pres, s, [
   { head: "Safe by default", body: "status, diff, log allowed. commit and push set to ask." },
   { head: "One branch per task", body: "Never commit directly to main." },
